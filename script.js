@@ -125,4 +125,4 @@ window.addEventListener("DOMContentLoaded", () => {
       window.location.href = "index.html";
     }
   }
-});
+})

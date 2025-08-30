@@ -58,7 +58,7 @@
     <div class="row g-4" id="courseList">
       <!-- Course Card Example -->
       <div class="col-md-4 course-card" data-category="programming">
-        <div class="card h-100">
+        <div class="card h-70">
           <img src="https://i.pinimg.com/736x/85/6e/45/856e4546b8c202dda03e97771f76f902.jpg" class="card-img-top" alt="Python">
           <div class="card-body">
             <h5 class="card-title">Learn Python 3</h5>
@@ -83,7 +83,7 @@
         <div class="card h-100">
           <img src="https://i.pinimg.com/736x/bf/2d/4b/bf2d4bfb3d01310a40d631ebdb838d5f.jpg" class="card-img-top" alt="React Native">
           <div class="card-body">
-            <h5 class="card-title">React Native</h5>
+            <h5 class="card-title">React</h5>
             <p class="card-text">Build cross-platform mobile apps with React Native.</p>
             <a href="course-reactnative.html" class="btn btn-primary">View Course</a>
           </div>
@@ -124,7 +124,7 @@
       </div>
 
       <div class="col-md-4 course-card" data-category="programming">
-        <div class="card h-100">
+        <div class="card h-70">
           <img src="https://i.pinimg.com/1200x/3f/f3/38/3ff338fded7cab6c231606b35ebe18ab.jpg" class="card-img-top" alt="progamming">
           <div class="card-body">
             <h5 class="card-title">JavaScript</h5>
@@ -135,7 +135,7 @@
       </div>
 
       <div class="col-md-4 course-card" data-category="web">
-        <div class="card h-100">
+        <div class="card h-50">
           <img src="https://i.pinimg.com/736x/d3/cc/e5/d3cce54db175bde40e64c9e9b59bb870.jpg" class="card-img-top" alt="web development">
           <div class="card-body">
             <h5 class="card-title">CSS</h5>
@@ -145,7 +145,6 @@
         </div>
       </div>
     </div>
-  </section>
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-4">
@@ -182,5 +181,32 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    const searchInput = document.getElementById("searchInput");
+const categoryFilters = document.getElementById("categoryFilter");
+const courseCards = document.querySelectorAll(".card");
+
+// Function to filter courses
+function filterCourses() {
+  const searchText = searchInput.value.toLowerCase();
+  const selectedCategory = categoryFilter.value;
+
+  courseCards.forEach(card => {
+    const title = card.querySelector("h3").textContent.toLowerCase();
+    const category = card.getAttribute("data-category");
+
+    const matchesSearch = title.includes(searchText);
+    const matchesCategory = (selectedCategory === "all" || category === selectedCategory);
+
+    if (matchesSearch && matchesCategory) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+searchInput.addEventListener("input", filterCourses);
+categoryFilter.addEventListener("change", filterCourses);
+</script>
 </body>
 </html>
