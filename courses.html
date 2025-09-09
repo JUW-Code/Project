@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold text-primary" href="index.html">CodeNetwork</a>
@@ -29,7 +28,6 @@
     </div>
   </nav>
 
-  <!-- Courses Header -->
   <section class="bg-primary text-white text-center py-5 mt-5">
     <div class="container">
       <h1 class="fw-bold">Browse Courses</h1>
@@ -37,7 +35,6 @@
     </div>
   </section>
 
-  <!-- Search & Filter -->
   <section class="container py-5">
     <div class="row mb-4">
       <div class="col-md-6">
@@ -53,10 +50,7 @@
         </select>
       </div>
     </div>
-
-    <!-- Course Grid -->
     <div class="row g-4" id="courseList">
-      <!-- Course Card Example -->
       <div class="col-md-4 course-card" data-category="programming">
         <div class="card h-70">
           <img src="https://i.pinimg.com/736x/85/6e/45/856e4546b8c202dda03e97771f76f902.jpg" class="card-img-top" alt="Python">
@@ -135,7 +129,7 @@
       </div>
 
       <div class="col-md-4 course-card" data-category="web">
-        <div class="card h-50">
+        <div class="card h-70">
           <img src="https://i.pinimg.com/736x/d3/cc/e5/d3cce54db175bde40e64c9e9b59bb870.jpg" class="card-img-top" alt="web development">
           <div class="card-body">
             <h5 class="card-title">CSS</h5>
@@ -146,12 +140,10 @@
       </div>
     </div>
 
-  <!-- Footer -->
   <footer class="bg-dark text-white text-center py-4">
     <p>© 2025 CodeNetwork. Learn. Build. Grow.</p>
   </footer>
-
-  <!-- JS for Filters -->
+  </section>
   <script>
     const searchBar = document.getElementById("searchBar");
     const categoryFilter = document.getElementById("categoryFilter");
@@ -177,8 +169,6 @@
     searchBar.addEventListener("keyup", filterCourses);
     categoryFilter.addEventListener("change", filterCourses);
   </script>
-
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
   <script>
@@ -186,7 +176,6 @@
 const categoryFilters = document.getElementById("categoryFilter");
 const courseCards = document.querySelectorAll(".card");
 
-// Function to filter courses
 function filterCourses() {
   const searchText = searchInput.value.toLowerCase();
   const selectedCategory = categoryFilter.value;

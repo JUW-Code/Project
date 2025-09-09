@@ -125,4 +125,84 @@ window.addEventListener("DOMContentLoaded", () => {
       window.location.href = "index.html";
     }
   }
-})
+});
+
+
+const loginModal = document.getElementById("loginForm");
+const signupModal = document.getElementById("signupForm");
+const navbarAuth = document.getElementById("navbarscript");
+
+// Check login status on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const user = localStorage.getItem("user");
+  if (user) {
+    showWelcome(user);
+  } else {
+    showAuthButtons();
+  }
+});
+
+// Signup
+if (signupForm) {
+  signupForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("signupName").value;
+    localStorage.setItem("user", name);
+    showWelcome(name);
+    bootstrap.Modal.getInstance(document.getElementById("signupModal")).hide();
+  });
+}
+
+// Login
+if (loginForm) {
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("loginName").value;
+    localStorage.setItem("user", name);
+    showWelcome(name);
+    bootstrap.Modal.getInstance(document.getElementById("loginModal")).hide();
+  });
+}
+
+// Show Welcome + Logout
+function showWelcome(name) {
+  navbarAuth.innerHTML = `
+    <li class="nav-item">
+      <span class="nav-link">Welcome, ${name} 👋</span>
+    </li>
+    <li class="nav-item">
+      <button id="logoutBtn" class="btn btn-outline-light">Logout</button>
+    </li>
+  `;
+  
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("user");
+    showAuthButtons();
+  });
+}
+
+// Show Login + Sign Up
+function showAuthButtons() {
+  navbarAuth.innerHTML = `
+    <li class="nav-item">
+      <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+    </li>
+  `;
+}
+
+// Back to Top Button
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+});
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 1, behavior: "smooth" });
+});
