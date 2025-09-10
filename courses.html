@@ -144,58 +144,7 @@
     <p>© 2025 CodeNetwork. Learn. Build. Grow.</p>
   </footer>
   </section>
-  <script>
-    const searchBar = document.getElementById("searchBar");
-    const categoryFilter = document.getElementById("categoryFilter");
-    const courses = document.querySelectorAll(".course-card");
-
-    function filterCourses() {
-      const searchText = searchBar.value.toLowerCase();
-      const category = categoryFilter.value;
-
-      courses.forEach(course => {
-        const title = course.querySelector(".card-title").textContent.toLowerCase();
-        const matchCategory = category === "all" || course.dataset.category === category;
-        const matchSearch = title.includes(searchText);
-
-        if (matchCategory && matchSearch) {
-          course.style.display = "block";
-        } else {
-          course.style.display = "none";
-        }
-      });
-    }
-
-    searchBar.addEventListener("keyup", filterCourses);
-    categoryFilter.addEventListener("change", filterCourses);
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
-  <script>
-    const searchInput = document.getElementById("searchInput");
-const categoryFilters = document.getElementById("categoryFilter");
-const courseCards = document.querySelectorAll(".card");
-
-function filterCourses() {
-  const searchText = searchInput.value.toLowerCase();
-  const selectedCategory = categoryFilter.value;
-
-  courseCards.forEach(card => {
-    const title = card.querySelector("h3").textContent.toLowerCase();
-    const category = card.getAttribute("data-category");
-
-    const matchesSearch = title.includes(searchText);
-    const matchesCategory = (selectedCategory === "all" || category === selectedCategory);
-
-    if (matchesSearch && matchesCategory) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
-searchInput.addEventListener("input", filterCourses);
-categoryFilter.addEventListener("change", filterCourses);
-</script>
+  <script src="Auth.js"></script>
 </body>
 </html>
