@@ -1,7 +1,7 @@
-console.log("script.js loaded ");
-
 document.addEventListener("DOMContentLoaded", () => {
   const navbarAuth = document.getElementById("navbarAuth");
+  const loginForm = document.getElementById("loginForm");
+  const signupForm = document.getElementById("signupForm");
   const savedUser = localStorage.getItem("userName");
   if (savedUser) {
     showWelcome(savedUser);
@@ -22,6 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
       loginModal.hide();
     }
   });
+  function showLoginSignup() {
+    navbarAuth.innerHTML = `
+    <li class="nav-item">
+      <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+    </li>
+  `;
+  }
   document.getElementById("signupForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
