@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       signupModal.hide();
     }
   });
-// FUNCTION: Show welcome message
   function showWelcome(name) {
     navbarAuth.innerHTML = `
       <li class="nav-item">
@@ -79,8 +78,6 @@ window.addEventListener("scroll", () => {
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 1, behavior: "smooth" });
 });
-
-//COURSE HTML
 const searchBar = document.getElementById("searchBar");
     const categoryFilter = document.getElementById("categoryFilter");
     const courses = document.querySelectorAll(".course-card");

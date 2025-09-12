@@ -74,7 +74,7 @@ body{
     transition: color 0.3s;
 }
 .footer a:hover{
-    color: #f9a825;
+    color: blue;
 }
 #backToTop {
     position: fixed;
