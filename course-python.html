@@ -3,117 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Course Details - CodeNetwork</title>
+  <title>Python Masterclass - CodeNetwork</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold text-primary" href="index.html">CodeNetwork</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <span id="navbarAuth" class="d-flex align-items-center"></span>
+        </ul>
       </div>
     </div>
   </nav>
+
   <section class="bg-dark text-white py-5 mt-5">
-    <div class="container">
-      <h1 class="fw-bold">Learn Python 3 – Beginner to Advanced</h1>
-      <p class="lead">Master Python programming, data structures, OOP, and build real-world projects.</p>
-      <p><strong>Instructor:</strong> leo Smith, Software Engineer</p>
-    </div>
-  </section>
-  <section class="container py-5">
-    <div class="row">
-      <div class="col-lg-8">
-        <h3>What you'll learn</h3>
-        <ul>
-          <li>Understand Python syntax and fundamentals</li>
-          <li>Work with data types, functions, and modules</li>
-          <li>Object-Oriented Programming (OOP) in Python</li>
-          <li>Build real-world applications</li>
-          <li>Use Python for data analysis and automation</li>
-        </ul>
-
-        <h3 class="mt-5">Course Description</h3>
-        <p>
-          This course will take you from a complete beginner to mastering Python 3. 
-          You’ll learn the core concepts of Python, including data structures, functions, 
-          and OOP, while building projects that prepare you for real-world challenges. 
-          Whether you want to become a data scientist, web developer, or software engineer, 
-          Python is the perfect language to start with.
-        </p>
-
-        <h3 class="mt-5">Requirements</h3>
-        <ul>
-          <li>No prior programming experience needed</li>
-          <li>A computer with internet connection</li>
-          <li>Willingness to learn and practice</li>
-        </ul>
-      </div>
-      <div class="col-lg-4">
-        <div class="card shadow-sm">
-          <img src="https://i.pinimg.com/736x/85/6e/45/856e4546b8c202dda03e97771f76f902.jpg" class="card-img-top" alt="Course Preview">
-          <div class="card-body">
-            <h4 class="fw-bold">$10.99</h4>
-            <button class="btn btn-success w-100 mb-2">Enroll Now</button>
-            <button class="btn btn-outline-secondary w-100">Add to Wishlist</button>
+    <div class="container py-4">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item"><a href="courses.html" class="text-primary text-decoration-none">Courses</a></li>
+              <li class="breadcrumb-item active text-white opacity-50" aria-current="page">Python</li>
+            </ol>
+          </nav>
+          <h1 class="display-4 fw-bold mb-3">Learn Python 3 – Beginner to Advanced</h1>
+          <p class="lead opacity-75 mb-4">Master Python programming, data structures, OOP, and build real-world projects from scratch.</p>
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://ui-avatars.com/api/?name=Leo+Smith&background=6366f1&color=fff" class="rounded-circle" width="48" alt="Instructor">
+            <div>
+              <p class="mb-0 fw-semibold">Leo Smith</p>
+              <p class="mb-0 small opacity-50">Software Engineer & Data Scientist</p>
+            </div>
           </div>
         </div>
-        <div class="mt-4">
-          <h5>This course includes:</h5>
-          <ul>
-            <li>15 hours on-demand video</li>
-            <li>30 downloadable resources</li>
-            <li>Certificate of completion</li>
-            <li>Lifetime access</li>
-          </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-5">
+    <div class="row g-5">
+      <div class="col-lg-8">
+        <div class="p-4 rounded-4 bg-white shadow-sm border mb-5">
+          <h3 class="fw-bold mb-4">What you'll learn</h3>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Python syntax and fundamentals</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Data types, functions, and modules</li>
+                <li><i class="fas fa-check text-primary me-2"></i> Industrial automation scripts</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Object-Oriented Programming (OOP)</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Building real-world applications</li>
+                <li><i class="fas fa-check text-primary me-2"></i> Data analysis with Pandas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="fw-bold mb-4">Course Description</h3>
+        <p class="text-secondary mb-4">
+          This course will take you from a complete beginner to mastering Python 3. You’ll learn the core concepts of Python, including data structures, functions, and OOP, while building projects that prepare you for real-world challenges.
+        </p>
+        <p class="text-secondary mb-5">
+          Whether you want to become a data scientist, web developer, or software engineer, Python is the perfect language to start with. Our project-based approach ensures you gain practical experience.
+        </p>
+
+        <h3 class="fw-bold mb-4">Requirements</h3>
+        <ul class="list-group list-group-flush border-top-0">
+          <li class="list-group-item bg-transparent px-0 border-0 mb-2"><i class="fas fa-info-circle text-primary me-2"></i> No prior programming experience needed</li>
+          <li class="list-group-item bg-transparent px-0 border-0 mb-2"><i class="fas fa-laptop text-primary me-2"></i> A computer with internet connection</li>
+          <li class="list-group-item bg-transparent px-0 border-0"><i class="fas fa-heart text-primary me-2"></i> Willingness to learn and practice</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="sticky-top" style="top: 100px;">
+          <div class="card border-0 shadow-lg mb-4">
+            <img src="https://i.pinimg.com/736x/85/6e/45/856e4546b8c202dda03e97771f76f902.jpg" class="card-img-top" alt="Course Preview">
+            <div class="card-body p-4 text-center">
+              <h2 class="fw-bold mb-3">$10.99</h2>
+              <button class="btn btn-primary w-100 py-3 mb-3">Enroll Now</button>
+              <button class="btn btn-outline-secondary w-100 py-2">Add to Wishlist</button>
+              <p class="small text-secondary mt-3 mb-0">30-Day Money-Back Guarantee</p>
+            </div>
+          </div>
+          <div class="p-4 rounded-4 bg-white border shadow-sm">
+            <h5 class="fw-bold mb-3">This course includes:</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-3 small"><i class="fas fa-video text-primary me-2"></i> 15 hours on-demand video</li>
+              <li class="mb-3 small"><i class="fas fa-file-download text-primary me-2"></i> 30 downloadable resources</li>
+              <li class="mb-3 small"><i class="fas fa-certificate text-primary me-2"></i> Certificate of completion</li>
+              <li class="small"><i class="fas fa-infinity text-primary me-2"></i> Full lifetime access</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-dark text-white text-center py-4">
-    <p>© 2025 CodeNetwork. Learn. Build. Grow.</p>
+  <footer class="footer mt-5">
+    <div class="container text-center">
+      <p class="opacity-50">&copy; 2025 CodeNetwork. Learn. Build. Grow.</p>
+    </div>
+    <button id="backToTop" class="btn btn-primary"><i class="fas fa-chevron-up"></i></button>
   </footer>
 
-
-  <div class="modal fade" id="loginModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content p-4">
-        <h5 class="modal-title">Login</h5>
-        <form>
-          <input type="email" class="form-control mb-3" placeholder="Email" required>
-          <input type="password" class="form-control mb-3" placeholder="Password" required>
-          <button type="submit" class="btn btn-primary w-100">Login</button>
-        </form>
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4 border-0 shadow-lg rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">Welcome Back</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Email Address</label>
+              <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Password</label>
+              <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3 mt-2">Sign In</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 
-
-  <div class="modal fade" id="signupModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content p-4">
-        <h5 class="modal-title">Sign Up</h5>
-        <form>
-          <input type="text" class="form-control mb-3" placeholder="Full Name" required>
-          <input type="email" class="form-control mb-3" placeholder="Email" required>
-          <input type="password" class="form-control mb-3" placeholder="Password" required>
-          <button type="submit" class="btn btn-success w-100">Sign Up</button>
-        </form>
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4 border-0 shadow-lg rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">Create Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="signupForm">
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Full Name</label>
+              <input type="text" id="signupName" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Email Address</label>
+              <input type="email" id="signupEmail" class="form-control" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Password</label>
+              <input type="password" id="signupPassword" class="form-control" placeholder="Create a password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3 mt-2">Create Account</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="Auth.js"></script>
+  <script src="Auth.js"></script>
 </body>
-</html>
+</html>
