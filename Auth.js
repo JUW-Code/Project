@@ -124,5 +124,38 @@ document.addEventListener("DOMContentLoaded", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
     }
+
+    // --- Scroll Effects (Progress & Reveal) ---
+    const scrollProgress = document.getElementById("scroll-progress");
+    const reveals = document.querySelectorAll(".reveal");
+
+    const handleScroll = () => {
+        // Progress Bar
+        const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPosition = window.scrollY;
+        const progress = (scrollPosition / scrollTotal) * 100;
+        if (scrollProgress) scrollProgress.style.width = `${progress}%`;
+
+        // Reveal Animation
+        reveals.forEach(reveal => {
+            const windowHeight = window.innerHeight;
+            const revealTop = reveal.getBoundingClientRect().top;
+            const revealPoint = 150;
+
+            if (revealTop < windowHeight - revealPoint) {
+                reveal.classList.add("active");
+            }
+        });
+
+        // Navbar Scrolled State
+        const navbar = document.getElementById("mainNav");
+        if (window.scrollY > 50) {
+            navbar?.classList.add("scrolled");
+        } else {
+            navbar?.classList.remove("scrolled");
+        }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
 });
- 
