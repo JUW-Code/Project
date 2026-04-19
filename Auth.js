@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Authentication Logic ---
     const navbarAuth = document.getElementById("navbarAuth");
     const loginForm = document.getElementById("loginForm");
     const signupForm = document.getElementById("signupForm");
@@ -72,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- Course Filtering Logic ---
     const searchBar = document.getElementById("searchBar") || document.getElementById("searchInput");
     const categoryFilter = document.getElementById("categoryFilter");
     const courses = document.querySelectorAll(".course-card, .card");
@@ -82,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedCategory = categoryFilter?.value || "all";
 
         courses.forEach(course => {
-            // Some cards use h3, some use .card-title (h5)
             const titleElement = course.querySelector("h3") || course.querySelector(".card-title");
             if (!titleElement) return;
 
@@ -109,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
         categoryFilter.addEventListener("change", filterCourses);
     }
 
-    // --- Back to Top Logic ---
     const backToTopBtn = document.getElementById("backToTop");
     if (backToTopBtn) {
         window.addEventListener("scroll", () => {
@@ -125,18 +121,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- Scroll Effects (Progress & Reveal) ---
     const scrollProgress = document.getElementById("scroll-progress");
     const reveals = document.querySelectorAll(".reveal");
 
     const handleScroll = () => {
-        // Progress Bar
         const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPosition = window.scrollY;
         const progress = (scrollPosition / scrollTotal) * 100;
         if (scrollProgress) scrollProgress.style.width = `${progress}%`;
 
-        // Reveal Animation
         reveals.forEach(reveal => {
             const windowHeight = window.innerHeight;
             const revealTop = reveal.getBoundingClientRect().top;
@@ -147,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Navbar Scrolled State
         const navbar = document.getElementById("mainNav");
         if (window.scrollY > 50) {
             navbar?.classList.add("scrolled");
@@ -157,5 +149,5 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 });
